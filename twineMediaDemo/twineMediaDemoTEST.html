@@ -9,11 +9,202 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Adding Media Demo TEST.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Adding Media Demo TEST" startnode="1" creator="Twine" creator-version="2.3.12" ifid="602402C2-B0B8-4BEA-8B39-89352CB5218A" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="412,472" size="100,100">Adding media to a Twine story is a great way to enhance the immersive and interactive experience for a player.
+<tw-storydata name="Adding Media Demo TEST" startnode="1" creator="Twine" creator-version="2.3.12" ifid="602402C2-B0B8-4BEA-8B39-89352CB5218A" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* 
+	Twine CSS Template
+	
+	Simple CSS Template to help Twine authors change 
+		the default appearance
+		
+	Most current version, and license information at:
+	https://github.com/danieltalsky/twine-css-template
+	
+	Special thanks to furkle's Twine 2 Harlowe CSS Tutorial
+	no longer up on the web but helped a lot with the basics.
+	
+	- Version:  1.0
+	- Author:   Daniel Talsky <daniel@danieltalsky.com>
+	
+	COLORS
+	The default colors I picked are based on the Solarized Dark theme, 
+	optimized for readability and most often used in computer programming.
+	Change them to make your game have whatever mood you want, just make
+	sure it's readable!
+	- background  				#002b36
+	- sidebar background   		#073642
+	
+	- main text color 			#839496
+	- main sidebar text color   #93a1a1
+	FONTS
+	
+	You can use a traditional HTML font stack, but having access to
+	unique fonts keeps your game looking unique.  I picked 
+	PT Sans Caption, but you can pick any combination of google fonts
+	and they will generate this import line for you.
+	
+	Google Fonts:
+	https://fonts.google.com/
+*/
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700');
+
+/* These are the default options for the entire browser window */
+body, tw-story {	
+	background-color: #002b36; 
+	/* Color is the foreground / font color */
+	color: #839496;
+	/* Make sure the first font listed is one of the fonts you imported above */
+	font-family: 'PT Sans Caption', sans-serif;
+	/* This makes the font size for normal letters just a little bit bigger than default */
+	font-size: 1.1em;
+}
+
+/* These are the default options for the each passage area */
+tw-passage {
+	/* 
+		This lets the story take up most of its width up to a maximum readable width 
+		an `em` is about the width of one of your letters.  max-width lets the size
+		get wider and wider with the size of the window but only to a sane point
+		
+		It's ok to experiment with making this smaller or larger
+	*/
+    max-width: 55em;
+	/* This centers the main story column in the window */
+    margin: 0 auto 0 auto;
+}
+
+/* The sidebar with scoring and the back button */
+tw-sidebar { 
+	background: #073642;
+	color: #93a1a1;
+	/* 
+		Gives the sidebar rounded corners.  Remove for no corners or make the number
+		higher for more rounded colors.
+		
+	*/
+	border-radius: 10px;
+
+	/* Uncomment to hide the sidebar completely */
+	/* display: none; */ 
+}
+
+/*
+  BASIC LINK STYLES
+  
+  This covers various different kinds of links in Harlowe
+*/
+.enchantment-link, tw-link, a {
+	color: #cb4b16; 
+	font-weight: bold; 
+	/* Adds a glow to links.  You can make it a seperate color from the text 
+	   The numbers mean, in order: 
+	   - How far to the right of the letter (0 means radiating from the letter)
+	   - How far below the letter
+	   - How much blur does the glow/shadow have
+	   - What color is the shadow
+	*/
+	text-shadow: 0 0 5px #cb4b16;
+}
+/* Links that have already been visited */
+.enchantment-link:visited, tw-link:visited, .enchantment-link.visited, tw-link.visited, a:visited {
+	color: #268bd2; 
+	font-weight: bold; 
+	text-shadow: 0 0 5px #268bd2;
+}
+/* Links when the mouse is over them */
+.enchantment-link:hover, tw-link:hover, a:hover {
+	color: #2aa198; 
+	font-weight: bold; 
+	text-shadow: 0 0 5px #2aa198;
+}
+
+
+/*
+	EFFECTS
+	The pulse-in effect is good for text that will appear based on a user
+	action.  In Twine2, text will just blink into being and the user might
+	not notice.  If you wrap your text in:
+	<span class="pulse-in">Text that gets shown.</span>
+	
+	It will appear with a bright colored pulse that makes it clear it just
+	appeared.
+*/
+@keyframes pulsein {
+  from { color: #00fbf7; text-shadow: 0 0 1em #00fbf7; }
+  to { color: #ADC3D8; text-shadow: 0 0; }
+}
+.pulse-in {
+    color: #ADC3D8;
+    font-size: 1.1em;
+    animation: pulsein 1.2s linear 3;
+}
+span.pulse-in {
+  font-size: inherit;
+}
+
+/* IMAGE STYLES */
+
+/* styles for all images by default */
+img {
+	/* for example */
+	/* border: 1px solid black; */
+}
+/* 
+   images with <img class="full-width"> will stretch 
+   to the full width of the story 
+*/
+img.full-width {
+	display:block; margin-right:auto; margin-left:auto; 
+	width: 100%;
+}
+
+
+
+
+
+/*
+	TABLET-SPECIFIC RULES / SMALL WIDTH BROWSERS
+*/
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+
+  tw-story {
+	  font-size: 3em;
+	  width: 100%;
+	  max-width: 95%;
+	  margin: 0 auto 0 auto;
+	  padding: 20% 10%;
+  }
+
+  tw-passage {
+	  width: 100%;
+  }  
+
+}	
+
+/*
+	MOBILE-SPECIFIC RULES
+	
+	You often want to make fonts much larger.
+*/
+@media only screen and (max-device-width: 480px) {
+
+  tw-story {
+	  font-size: 3.2em;
+	  width: 100%;
+	  max-width: 95%;
+	  margin: 0 auto 0 auto;
+	  padding: 20% 5%;
+  }
+
+  tw-passage {
+	  width: 100%;
+  }  
+  
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="412,472" size="100,100">Adding media to a Twine story is a great way to enhance the immersive and interactive experience for a player.
 
 With Twine 2, we are able to add images, videos, sound effects, and music to our games!
 
-[[Ok, how does it work?-&gt;mediaHowTo]]</tw-passagedata><tw-passagedata pid="2" name="mediaHowTo" tags="" position="412,622" size="100,100">Currently, Twine does NOT allow us to &quot;embed&quot; media (images, movies, sounds, music, etc.) into our passages. 
+&lt;a href=&quot;http://twinery.org/wiki/twine2:add_an_image_movie_sound_effect_or_music&quot; target=&quot;_blank&quot;&gt;This&lt;/a&gt; is the official guide for adding various media types to Twine stories. Feel free to use it at any time.
+
+[[Ok, now, how does this work?-&gt;mediaHowTo]]</tw-passagedata><tw-passagedata pid="2" name="mediaHowTo" tags="" position="412,622" size="100,100">Currently, Twine does NOT allow us to &quot;embed&quot; media (images, movies, sounds, music, etc.) into our passages. 
 
 Instead, we have to LINK to media files. These can be stored and linked somewhere on the web OR stored and linked locally to the SAME FOLDER that our .html Twine game file(s) are saved on our computers.
 
@@ -56,6 +247,8 @@ To link to an external video file (found somewhere online, such as a YouTube or 
 &lt;img src=&quot;embedVideo2.png&quot; alt=&quot;Embedding externally-linked videos, pt. 2&quot;&gt;
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/jXdbw21SKQg&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+Now, let&#39;s move on to SOUND!
 
 [[Adding Sound Effects in Twine-&gt; soundEffects]]</tw-passagedata><tw-passagedata pid="5" name=" soundEffects" tags="" position="412,1072" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,i=!1,a=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){i=!0,a=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw a}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){

@@ -241,9 +241,13 @@ Now, let&#39;s take a look at how to add video to our games!
 
 A video file can be locally-linked (saved on your computer, in the same folder as your Twine .html game file) OR externally-linked (to a video online somewhere). 
 
-To link to a locally-saved video file, we use the &lt; video &gt; element and link with the &quot;src&quot; attribute, just as we do with the &lt; img &gt; tag.
+To link to a locally-saved video file, we use the &lt; video &gt; element and link with the &quot;src&quot; attribute, just as we do with the &lt; img &gt; tag. 
 
-&lt;video src=&quot;kittens.mp4&quot; width=&quot;640&quot;&gt;&lt;/video&gt;
+&lt;img src=&quot;videosHowTo2.png&quot; alt=&quot;Example syntax for adding video to Twine&quot;&gt;
+
+We also need to insert the attribute &quot;controls&quot; for video player controls, and we need to specify the &quot;type&quot; of the video file it is.
+
+&lt;video src=&quot;kittens.mp4&quot; width=&quot;640&quot; controls type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 
 To link to an external video file (found somewhere online, such as a YouTube or Vimeo video, etc.), we need to use the &quot;embed&quot; feature provided by online video hosting services. 
 
@@ -256,6 +260,8 @@ To link to an external video file (found somewhere online, such as a YouTube or 
 The tag used to &quot;embed&quot; videos into our passages is &lt; iframe &gt;.
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/jXdbw21SKQg&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+For more information on using the &lt; video &gt; tag, please &lt;a href=&quot;https://www.w3schools.com/html/html5_video.asp&quot; target=&quot;_blank&quot;&gt;visit this resource&lt;/a&gt;.
 
 
 Now, let&#39;s move on to adding sounds and music to our stories!

@@ -217,14 +217,14 @@ Let&#39;s first look at how to add images to Twine stories.
 
 [[Adding Images in Twine-&gt;images]]</tw-passagedata><tw-passagedata pid="3" name="images" tags="" position="412,772" size="100,100">To add images to Twine passages, you first need to know the URL for the image. This can be a local URL (file stored on your computer) or an external URL (file found somewhere online). Once you have your URL, we simply use the same HTMl code that we would to add an image to a webpage.
 
-&lt;img src=&quot;imagesHowTo.png&quot; alt=&quot;example syntax of linking to an image in Twine/ HTML&quot;&gt;
+&lt;img src=&quot;imagesHowTo.png&quot; alt=&quot;example syntax of linking to an image in Twine/ HTML&quot; width=&quot;60%&quot;&gt;
 
 Hint: As shown above, we use the &lt; img &gt; element to bring in an image (in HTML and in Twine). We also need AT LEAST the &quot;src&quot; attribute (which we use to point to the link of where to locate our image) and the &quot;alt&quot; attribute (used to provide alt text/ descriptive text for those unable to see the image).
 
 Let&#39;s look at both types of images.
 
 Local image (saved in the same folder as this .html Twine file):
-&lt;img src=&quot;sadCat1.png&quot; width=&quot;30%&quot; alt=&quot;sad cat&quot;&gt;
+&lt;img src=&quot;sadCat1.png&quot; width=&quot;50%&quot; alt=&quot;sad cat&quot;&gt;
 
 External image (found somewhere online):
 &lt;img src=&quot;https://i.redd.it/4iqs0dlkovl61.png&quot; alt=&quot;sad cat with sad cat merch&quot;&gt;
@@ -243,7 +243,7 @@ A video file can be locally-linked (saved on your computer, in the same folder a
 
 To link to a locally-saved video file, we use the &lt; video &gt; element and link with the &quot;src&quot; attribute, just as we do with the &lt; img &gt; tag. 
 
-&lt;img src=&quot;videosHowTo2.png&quot; alt=&quot;Example syntax for adding video to Twine&quot;&gt;
+&lt;img src=&quot;videosHowTo2.png&quot; alt=&quot;Example syntax for adding video to Twine&quot; width=&quot;60%&quot;&gt;
 
 We also need to insert the attribute &quot;controls&quot; for video player controls, and we need to specify the &quot;type&quot; of the video file it is.
 
@@ -251,9 +251,9 @@ We also need to insert the attribute &quot;controls&quot; for video player contr
 
 To link to an external video file (found somewhere online, such as a YouTube or Vimeo video, etc.), we need to use the &quot;embed&quot; feature provided by online video hosting services. 
 
-&lt;img src=&quot;embedVideo1.png&quot; alt=&quot;Embedding externally-linked videos, pt. 1&quot;&gt;
+&lt;img src=&quot;embedVideo1.png&quot; alt=&quot;Embedding externally-linked videos, pt. 1&quot; width=&quot;60%&quot;&gt;
 
-&lt;img src=&quot;embedVideo2.png&quot; alt=&quot;Embedding externally-linked videos, pt. 2&quot;&gt;
+&lt;img src=&quot;embedVideo2.png&quot; alt=&quot;Embedding externally-linked videos, pt. 2&quot; width=&quot;60%&quot;&gt;
 
 &lt;img src=&quot;embedVideo3.png&quot; alt=&quot;Embedding externally-linked videos, pt. 3&quot;&gt;
 
@@ -270,13 +270,13 @@ Now, let&#39;s move on to adding sounds and music to our stories!
 
 Many Twine games incorporate a carefully-selected mix of sound effects, background music/ soundtracks, and even voice narration files with this feature.
 
-&lt;img src=&quot;soundHowTo.png&quot; alt=&quot;Twine audio syntax example&quot;&gt;
+&lt;img src=&quot;soundHowTo.png&quot; alt=&quot;Twine audio syntax example&quot; width=&quot;60%&quot;&gt;
 
 All that we need for basic audio implementation is the &lt; audio &gt; element. Within that element, we need to provide a reference to our audio file (specified with the &quot;src&quot; attribute) and tell our browsers what type of audio file our audio is (specified with the &quot;type&quot; attribute).
 
 To prevent autoplay, simply write &quot;autoplay muted&quot; into the &lt; audio &gt; tag. To add audio player controls, add &quot;controls&quot; within the &lt; audio &gt; tag.
 
-&lt;audio src=&quot;cat.mp3&quot; type=&quot;audio/mpeg&quot; controls autoplay muted&gt;
+&lt;audio src=&quot;cat.mp3&quot; type=&quot;audio/mpeg&quot; controls autoplay muted width=&quot;150%&quot;&gt;
 
 For more information on implementing audio into Twine, please see &lt;a href=&quot;https://www.w3schools.com/html/html5_audio.asp&quot; target=&quot;_blank&quot;&gt;the HTML &lt; audio &gt; reference&lt;/a&gt;.
 
